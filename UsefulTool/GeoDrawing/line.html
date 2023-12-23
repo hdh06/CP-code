@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://lukakalinovcic.github.io/geodeb/main.js"></script>
+</head>
+<body>
+  <div id="rootElement"></div>
+</body>
+<script type="text/javascript">
+resourcePath = 'https://lukakalinovcic.github.io/geodeb/';
+jsonData = 
+{
+  "source_code": [
+    "#include <bits/stdc++.h>\u000a",
+    "#include <geodeb.h>\u000a",
+    "\u000a",
+    "using namespace std;\u000a",
+    "\u000a",
+    "int main(){\u000a",
+    "\u0009GD_INIT(\u0022line.html\u0022);\u000a",
+    "\u0009long long x1, y1, x2, y2, x3, y3, x4, y4;\u000a",
+    "\u0009cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3 >> x4 >> y4;\u000a",
+    "\u0009GD_POINT(x1, y1, \u0022#000000\u0022) << x1 << \u0022 \u0022 << y1;\u000a",
+    "\u0009GD_POINT(x2, y2, \u0022#000000\u0022) << x2 << \u0022 \u0022 << y2;\u000a",
+    "\u0009GD_POINT(x3, y3, \u0022#000000\u0022) << x3 << \u0022 \u0022 << y3;\u000a",
+    "\u0009GD_POINT(x4, y4, \u0022#000000\u0022) << x4 << \u0022 \u0022 << y4;\u000a",
+    "\u000a",
+    "\u0009GD_SEGMENT(x1, y1, x2, y2, \u0022#B22222 bold\u0022);\u000a",
+    "\u0009// GD_PAUSE();\u000a",
+    "\u0009GD_SEGMENT(x3, y3, x4, y4, \u0022#0000FF\u0022);\u000a",
+    "\u0009return 0;\u000a",
+    "}"
+  ],
+  "root": {
+    "type": "begin",
+    "line": 7,
+    "children": [
+      {
+        "type": "point",
+        "line": 10,
+        "x": 1000000000.000000,
+        "y": 1000000000.000000,
+        "attr": "#000000",
+        "label": "1000000000 1000000000"
+      },
+      {
+        "type": "point",
+        "line": 11,
+        "x": 1000000000.000000,
+        "y": -1000000000.000000,
+        "attr": "#000000",
+        "label": "1000000000 -1000000000"
+      },
+      {
+        "type": "point",
+        "line": 12,
+        "x": -1000000000.000000,
+        "y": -1000000000.000000,
+        "attr": "#000000",
+        "label": "-1000000000 -1000000000"
+      },
+      {
+        "type": "point",
+        "line": 13,
+        "x": -1000000000.000000,
+        "y": 1000000000.000000,
+        "attr": "#000000",
+        "label": "-1000000000 1000000000"
+      },
+      {
+        "type": "segment",
+        "line": 15,
+        "x1": 1000000000.000000,
+        "y1": 1000000000.000000,
+        "x2": 1000000000.000000,
+        "y2": -1000000000.000000,
+        "attr": "#B22222 bold"
+      },
+      {
+        "type": "segment",
+        "line": 17,
+        "x1": -1000000000.000000,
+        "y1": -1000000000.000000,
+        "x2": -1000000000.000000,
+        "y2": 1000000000.000000,
+        "attr": "#0000FF"
+      }
+    ]
+  },
+  "theme": "light"
+};
+init(resourcePath);
+</script>
+</html>

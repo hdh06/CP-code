@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://lukakalinovcic.github.io/geodeb/main.js"></script>
+</head>
+<body>
+  <div id="rootElement"></div>
+</body>
+<script type="text/javascript">
+resourcePath = 'https://lukakalinovcic.github.io/geodeb/';
+jsonData = 
+{
+  "source_code": [
+    "#include <bits/stdc++.h>\u000a",
+    "#include <geodeb.h>\u000a",
+    "\u000a",
+    "using namespace std;\u000a",
+    "\u000a",
+    "int main(){\u000a",
+    "\u0009GD_INIT(\u0022polygon.html\u0022);\u000a",
+    "\u0009int n;\u000a",
+    "\u0009cin >> n;\u000a",
+    "\u000a",
+    "\u0009vector<array<int, 2> > arr(n + 2);\u000a",
+    "\u000a",
+    "\u0009for (int i = 1; i <= n; i++){\u000a",
+    "\u0009\u0009cin >> arr[i][0] >> arr[i][1];\u000a",
+    "\u0009}\u000a",
+    "\u000a",
+    "\u0009GD_POINT(arr[1][0], arr[1][1]);\u000a",
+    "\u0009arr[n + 1] = arr[1];\u000a",
+    "\u0009for (int i = 2; i <= n + 1; i++){\u000a",
+    "\u0009\u0009GD_POINT(arr[i][0], arr[i][1]);\u000a",
+    "\u0009\u0009GD_SEGMENT(arr[i][0], arr[i][1], arr[i - 1][0], arr[i - 1][1], \u0022blue bold\u0022);\u000a",
+    "\u0009\u0009GD_PAUSE();\u000a",
+    "\u0009}\u000a",
+    "\u000a",
+    "\u0009return 0;\u000a",
+    "}\u000a",
+    "\u000a",
+    "\u000a"
+  ],
+  "root": {
+    "type": "begin",
+    "line": 7,
+    "children": [
+      {
+        "type": "point",
+        "line": 17,
+        "x": 0.000000,
+        "y": 0.000000
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 0.000000,
+        "y": 2.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 0.000000,
+        "y1": 2.000000,
+        "x2": 0.000000,
+        "y2": 0.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 1.000000,
+        "y": 1.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 1.000000,
+        "y1": 1.000000,
+        "x2": 0.000000,
+        "y2": 2.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 2.000000,
+        "y": 2.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 2.000000,
+        "y1": 2.000000,
+        "x2": 1.000000,
+        "y2": 1.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 3.000000,
+        "y": 1.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 3.000000,
+        "y1": 1.000000,
+        "x2": 2.000000,
+        "y2": 2.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 3.000000,
+        "y": 2.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 3.000000,
+        "y1": 2.000000,
+        "x2": 3.000000,
+        "y2": 1.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 4.000000,
+        "y": 1.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 4.000000,
+        "y1": 1.000000,
+        "x2": 3.000000,
+        "y2": 2.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 5.000000,
+        "y": 1.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 5.000000,
+        "y1": 1.000000,
+        "x2": 4.000000,
+        "y2": 1.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      },
+      {
+        "type": "point",
+        "line": 20,
+        "x": 0.000000,
+        "y": 0.000000
+      },
+      {
+        "type": "segment",
+        "line": 21,
+        "x1": 0.000000,
+        "y1": 0.000000,
+        "x2": 5.000000,
+        "y2": 1.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "break",
+        "line": 22
+      }
+    ]
+  },
+  "theme": "light"
+};
+init(resourcePath);
+</script>
+</html>

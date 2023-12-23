@@ -1,0 +1,10 @@
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/sysinit.o
+ARRAY.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/system.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl-console/crt.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/baseunix.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/unix.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/termio.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/unixtype.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/sysctl.o
+/usr/local/lib/fpc/3.2.0/units/x86_64-darwin/rtl/unixutil.o

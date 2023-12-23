@@ -1,0 +1,30 @@
+bài PASSW
+bài này tính gồm 2 phần:
+- Phần a: 
+a = min(5, max(m - 5, 0));
+với m = độ dài xâu
+giải thích: 
+max(m - 5, 0) để khi m trừ đi 0 mà âm thì nó lấy số 0 còn lại nó lấy m - 5
+min(5, max(...)) để nếu cái max lớn hơn 5 thì lấy 5, nhỏ hơn 5 thì lấy cái max thôi
+vì vậy, trong [1, 5] thì sẽ là 0, [6, 10] sẽ lần lượt nằm trong khoảng [1, 5] và lớn hơn 10 thì nó luôn là 5. 
+- Phần b: 
+cho 3 biến x = 0, y = 0, z = 0, mỗi biến cho biết sự hiện diện của mỗi loại [A...Z], [a...z] và [0...9] trong xâu.
+duyệt từng phần tử x trong xâu nếu:
++ 'A' <= x <= 'Z' thì x = 1;
++ 'a' <= x <= 'z' thì y = 1;
++ '0' <= x <= '9' thì z = 1;
+sau đó:
+* x + y + z == 1 thì b = 1; (1 loại)
+* x + y + z == 2 thì b = 2; (2 loại)
+* x + y + z == 3 thì b = 3; (3 loại)
+
+Kết quả sẽ là a + b cho mỗi xâu được xử lý.
+
+bài PALINZ
+ở mỗi truy vấn thực hiện phép kiểm tra đối xứng của xâu trong khoảng l->r
+
+kiểm tra đối xứng bằng cách cho vòng for gồm 2 biến i chạy từ l lên và j chạy từ r xuống cho đến khi i >= j. i = l và j = r, i++ và j-- ở mỗi vòng lặp. Ta khai báo 1 biến bool ban đầu = true cho biết nếu = true thì nó sẽ đối xứng, false thì ngược lại. Với mỗi cặp i, j trong vòng for:
+nếu ký tự vị trí thứ i khác vị trí thứ j -> không đối xứng -> biến bool = false
+
+hết vòng for mà ko có cặp nào khác biến bool sẽ = true.
+nêu là true thì in ra "YES" ko thì "NO", xét ở mỗi truy vấn.

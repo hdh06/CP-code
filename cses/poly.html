@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://lukakalinovcic.github.io/geodeb/main.js"></script>
+</head>
+<body>
+  <div id="rootElement"></div>
+</body>
+<script type="text/javascript">
+resourcePath = 'https://lukakalinovcic.github.io/geodeb/';
+jsonData = 
+{
+  "source_code": [
+    "#include <bits/stdc++.h>\u000a",
+    "#include <geodeb.h>\u000a",
+    "\u000a",
+    "using namespace std;\u000a",
+    "\u000a",
+    "typedef long long ll;\u000a",
+    "\u000a",
+    "struct P{\u000a",
+    "\u0009ll x, y;\u000a",
+    "};\u000a",
+    "\u000a",
+    "P vtc(P A, P B){return {B.x - A.x, B.y - A.y};}\u000a",
+    "ll cross(P A, P B){return A.x*B.y - A.y*B.x;};\u000a",
+    "int ccw(P A, P B){\u000a",
+    "\u0009ll cr = cross(A, B);\u000a",
+    "\u0009if (cr == 0) return 0;\u000a",
+    "\u0009if (cr > 0) return 1;\u000a",
+    "\u0009return -1;\u000a",
+    "}\u000a",
+    "int pPos(P X, P A, P B){\u000a",
+    "\u0009if (A.x > B.x) swap(A, B);\u000a",
+    "\u0009if (A.x == B.x && A.y > B.y) swap(A, B);\u000a",
+    "\u0009return ccw(vtc(A, B), vtc(A, X));\u000a",
+    "}\u000a",
+    "\u000a",
+    "bool inRange(P X, P A, P B){\u000a",
+    "\u0009if (A.x > B.x) swap(A, B);\u000a",
+    "\u0009if (A.x == B.x && A.y > B.y) swap(A, B);\u000a",
+    "\u0009return (A.x <= X.x && X.x <= B.x) && (A.y <= X.y && X.y <= B.y);\u000a",
+    "}\u000a",
+    "\u000a",
+    "vector<P> poly;\u000a",
+    "int n, q;\u000a",
+    "\u000a",
+    "int isPoly(int x, int y){\u000a",
+    "\u0009int dem = 0;\u000a",
+    "\u0009for (int i = 0, j = 1; i <= n - 1; i++, j++){\u000a",
+    "\u0009\u0009if (x == poly[i].y && y == poly[i].y) return 0;\u000a",
+    "\u0009\u0009if (poly[i].y == y && poly[j].y == y){\u000a",
+    "\u0009\u0009\u0009if (min(poly[i].x, poly[j].x) <= x && x <= max(poly[j].x, poly[i].x)) return 0;\u000a",
+    "\u0009\u0009}\u000a",
+    "\u000a",
+    "\u0009\u0009if (poly[i].x < x && poly[j].x < x) continue;\u000a",
+    "\u000a",
+    "\u0009\u0009if (max(poly[i].y, poly[j].y) > y && min(poly[i].y, poly[j].y) < y){\u000a",
+    "\u0009\u0009\u0009if (pPos({x, y}, poly[i], poly[j]) == 0) return 0;\u000a",
+    "\u0009\u0009\u0009if (pPos({x, y}, poly[i], poly[j]) < 0) dem++;\u000a",
+    "\u000a",
+    "\u0009\u0009}\u000a",
+    "\u0009}\u000a",
+    "\u0009// cout << dem;\u000a",
+    "\u0009if (dem % 2 == 0) return -1;\u000a",
+    "\u0009if (dem % 2 != 0) return 1;\u000a",
+    "\u0009return 0; \u000a",
+    "}\u000a",
+    "\u000a",
+    "void drawtest(){\u000a",
+    "\u0009\u000a",
+    "\u0009for (int i = 0, j = 1; i <= n - 1; i++, j ++){\u000a",
+    "\u0009\u0009GD_POINT(poly[i].x, poly[i].y);\u000a",
+    "\u0009\u0009GD_SEGMENT(poly[i].x, poly[i].y, poly[j].x, poly[j].y, \u0022blue bold\u0022);\u000a",
+    "\u0009} \u000a",
+    "}\u000a",
+    "\u000a",
+    "int main(){\u000a",
+    "\u0009GD_INIT(\u0022poly.html\u0022);\u000a",
+    "\u0009cin >> n >> q;\u000a",
+    "\u000a",
+    "\u0009poly.resize(n + 1);\u000a",
+    "\u000a",
+    "\u0009for (int i = 0; i < n; i++) cin >> poly[i].x >> poly[i].y;\u000a",
+    "\u0009poly[n] = poly[0];\u000a",
+    "\u000a",
+    "\u0009drawtest();\u000a",
+    "\u000a",
+    "\u0009while (q--){\u000a",
+    "\u0009\u0009int x, y; \u000a",
+    "\u0009\u0009cin >> x >> y;\u000a",
+    "\u0009\u0009GD_POINT(x, y, \u0022red\u0022);\u000a",
+    "\u0009\u0009int ans = isPoly(x, y);\u000a",
+    "\u0009\u0009if (ans == 0) cout << \u0022BOUNDARY\u0022;\u000a",
+    "\u0009\u0009if (ans == 1) cout << \u0022INSIDE\u0022;\u000a",
+    "\u0009\u0009if (ans == -1) cout << \u0022OUTSIDE\u0022;\u000a",
+    "\u0009\u0009// cout << ans;\u000a",
+    "\u0009\u0009cout << endl;\u000a",
+    "\u0009}\u0009\u000a",
+    "\u0009return 0;\u000a",
+    "\u0009\u000a",
+    "}"
+  ],
+  "root": {
+    "type": "begin",
+    "line": 66,
+    "children": [
+      {
+        "type": "point",
+        "line": 60,
+        "x": 1.000000,
+        "y": 1.000000
+      },
+      {
+        "type": "segment",
+        "line": 61,
+        "x1": 1.000000,
+        "y1": 1.000000,
+        "x2": 4.000000,
+        "y2": 2.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "point",
+        "line": 60,
+        "x": 4.000000,
+        "y": 2.000000
+      },
+      {
+        "type": "segment",
+        "line": 61,
+        "x1": 4.000000,
+        "y1": 2.000000,
+        "x2": 3.000000,
+        "y2": 5.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "point",
+        "line": 60,
+        "x": 3.000000,
+        "y": 5.000000
+      },
+      {
+        "type": "segment",
+        "line": 61,
+        "x1": 3.000000,
+        "y1": 5.000000,
+        "x2": 1.000000,
+        "y2": 4.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "point",
+        "line": 60,
+        "x": 1.000000,
+        "y": 4.000000
+      },
+      {
+        "type": "segment",
+        "line": 61,
+        "x1": 1.000000,
+        "y1": 4.000000,
+        "x2": 1.000000,
+        "y2": 1.000000,
+        "attr": "blue bold"
+      },
+      {
+        "type": "point",
+        "line": 79,
+        "x": 2.000000,
+        "y": 3.000000,
+        "attr": "red"
+      },
+      {
+        "type": "point",
+        "line": 79,
+        "x": 3.000000,
+        "y": 1.000000,
+        "attr": "red"
+      },
+      {
+        "type": "point",
+        "line": 79,
+        "x": 1.000000,
+        "y": 3.000000,
+        "attr": "red"
+      }
+    ]
+  },
+  "theme": "light"
+};
+init(resourcePath);
+</script>
+</html>

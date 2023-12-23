@@ -1,0 +1,3 @@
+C. C(k, n - 1) * m * (m - 1) ^ k
+- Tinh C(k, n) mod p bat ky
+C1: C(k, n) = C(k, n - 1) + C(k - 1, n - 1)

@@ -1,0 +1,9 @@
+arr(n) = {}
+q truy vấn
+l r k x
+tăng các phần từ trong [l, r] có chỉ số chia hết cho k x đơn vị
+sub1: n, q <= 2000
+sub2: k = 1
+sub3: k = 2
+sub4: l = 1, r = n
+sub5: n, q <= 5e5

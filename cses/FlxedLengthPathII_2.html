@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://cses.fi/problemset/task/2081 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" id="nanobarcss">.nanobar{width:100%;height:4px;z-index:9999;top:0}.bar{width:0;height:100%;transition:height .3s;background:#000}</style>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet " type="text/css" href="./FlxedLengthPathII_2_files/cses.css" id="styles">
+  <link rel="stylesheet alternate" type="text/css" href="./FlxedLengthPathII_2_files/cses-dark.css" id="styles-dark">
+  <meta name="theme-color" content="white" id="theme-color">
+  <script type="application/json" id="darkmode-enabled">false</script>
+  <script src="./FlxedLengthPathII_2_files/ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="./FlxedLengthPathII_2_files/all.min.css">
+<link rel="stylesheet" type="text/css" href="./FlxedLengthPathII_2_files/prettify.css"></head>
+<body class="with-sidebar ">
+  <div class="header">
+    <div>
+      <a href="https://cses.fi/" class="logo"><img src="./FlxedLengthPathII_2_files/logo.png" alt="CSES"></a>
+      <a class="menu-toggle" onclick="document.body.classList.toggle(&#39;menu-open&#39;);">
+        <i class="fas fa-bars"></i>
+      </a>
+      <div class="controls">
+                <a class="account" href="https://cses.fi/user/67676">_HDH</a>
+        <span>—</span>
+                        <a href="https://cses.fi/darkmode" title="Toggle dark mode" onclick="return toggle_theme()"><i class="fas fa-adjust"></i><span>Dark mode</span></a>
+                <a href="https://cses.fi/logout" title="Log out"><i class="fas fa-sign-out-alt"></i><span>Log out</span></a>
+              </div>
+    </div>
+  </div>
+  <div class="skeleton">
+
+  <div class="navigation">
+    <div class="title-block">
+      <h3><a href="https://cses.fi/problemset/list/">CSES Problem Set</a></h3>
+      <h1>Fixed-Length Paths II</h1>
+<ul class="nav">
+<li><a href="https://cses.fi/problemset/task/2081/" class="current">Task</a></li>
+<li><a href="https://cses.fi/problemset/submit/2081/">Submit</a></li>
+<li><a href="https://cses.fi/problemset/view/2081/">Results</a></li>
+<li><a href="https://cses.fi/problemset/stats/2081/">Statistics</a></li>
+</ul>
+    </div>
+    <div class="sidebar"></div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="content">
+
+
+<title>CSES - Fixed-Length Paths II</title><link rel="stylesheet" href="./FlxedLengthPathII_2_files/katex.min.css">
+<script defer="" src="./FlxedLengthPathII_2_files/katex.min.js"></script>
+
+<script>
+addEventListener("DOMContentLoaded", function (e) {
+    const mathElements = document.getElementsByClassName("math");
+    const macros = {};
+    for (let element of mathElements) {
+        katex.render(element.textContent, element, {
+            displayMode: element.classList.contains("display"),
+            throwOnError: false,
+            globalGroup: true,
+            macros,
+        });
+    }
+});
+</script>
+<ul class="task-constraints">
+<li><b>Time limit:</b> 1.00 s</li>
+<li><b>Memory limit:</b> 512 MB</li>
+</ul>
+<input type="hidden" name="course" value="problemset">
+<input type="hidden" name="task" value="2081">
+<div class="md"><p>Given a tree of <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> nodes, your task is to count the number of distinct paths that have at least <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> and at most <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> edges.</p>
+<h1 id="input">Input</h1>
+<p>The first input line contains three integers <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span>, <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> and <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span>: the number of nodes and the path lengths. The nodes are numbered <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1,2,\ldots,n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8389em; vertical-align: -0.1944em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord mathnormal">n</span></span></span></span></span>.</p>
+<p>Then there are <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6667em; vertical-align: -0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 0.6444em;"></span><span class="mord">1</span></span></span></span></span> lines describing the edges. Each line contains two integers <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span></span> and <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span></span>: there is an edge between nodes <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span></span> and <span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span></span>.</p>
+<h1 id="output">Output</h1>
+<p>Print one integer: the number of paths.</p>
+<h1 id="constraints">Constraints</h1>
+<ul>
+<li><span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>k</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>k</mi><mn>2</mn></msub><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \le k_1 \le k_2 \le n \le 2 \cdot 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.7804em; vertical-align: -0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.8444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0315em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3011em;"><span class="" style="top: -2.55em; margin-left: -0.0315em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.7719em; vertical-align: -0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.8141em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li><span class="math inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1 \le a,b \le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.7804em; vertical-align: -0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.8889em; vertical-align: -0.1944em;"></span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.1667em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span></li>
+</ul>
+<h1 id="example">Example</h1>
+<p>Input:</p>
+<pre>5 2 3
+1 2
+2 3
+3 4
+3 5
+</pre>
+<p>Output:</p>
+<pre>6
+</pre></div>    </div>
+    <div class="nav sidebar">
+<h4>Tree Algorithms</h4>...
+<a href="https://cses.fi/problemset/task/1136">Counting Paths<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/1137">Subtree Queries<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/1138">Path Queries<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/2134">Path Queries II<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/1139">Distinct Colors<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/2079">Finding a Centroid<span class="task-score icon full"></span></a><a href="https://cses.fi/problemset/task/2080">Fixed-Length Paths I<span class="task-score icon full"></span></a><a class="current" href="https://cses.fi/problemset/task/2081">Fixed-Length Paths II<span class="task-score icon zero"></span></a><hr>    <h4>Your submissions</h4>
+
+    <a class="" href="https://cses.fi/problemset/result/4161438/">2022-07-01 12:08:28 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160032/">2022-07-01 05:29:34 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160022/">2022-07-01 05:21:56 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160010/">2022-07-01 05:16:05 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160006/">2022-07-01 05:14:27 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160004/">2022-07-01 05:13:58 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4160002/">2022-07-01 05:12:46 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4159996/">2022-07-01 05:08:06 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4159991/">2022-07-01 05:01:56 <span class="task-score icon zero"></span></a><a class="" href="https://cses.fi/problemset/result/4159990/">2022-07-01 05:01:11 <span class="task-score icon zero"></span></a></div>
+</div>
+</div><div class="nanobar" style="position: fixed;"><div class="bar"></div></div></body></html>
