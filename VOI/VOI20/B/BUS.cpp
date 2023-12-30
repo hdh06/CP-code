@@ -82,8 +82,7 @@ int main(){
 
 	d1.reset(n);
 
-	int ans = INT_MAX;
-	for (auto eA: A){
+	int ans = INT_MAX;	for (auto eA: A){
 		d1.unite(eA.a, eA.b);
 		if (d1.find(s) == d1.find(t)){
 			cout << eA.w << "\n";
