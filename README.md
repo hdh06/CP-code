@@ -2,6 +2,7 @@
 - Tổng hợp code trên nhiều trang web khác nhau
 - Không chỉ các nền tảng code mà còn trại hè/ trại đông
 - Không chỉ thế còn các thư mục tạo ra vì không mục địch gì cả
+- Không chỉ bừa bộn mà không có cả quy tắt nhất định, mọi thư mục/file code được đặt tên và sắp xếp một cách random
 
 # Enjoy
 1. Mở code
